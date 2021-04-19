@@ -5,7 +5,6 @@
 //  Created by user188734 on 4/17/21.
 //
 
-import Foundation
 struct Car {
     var manufacturer: String
     var model: String

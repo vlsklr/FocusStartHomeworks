@@ -5,7 +5,6 @@
 //  Created by user188734 on 4/17/21.
 //
 
-import Foundation
 
 class MainApp
 {
@@ -24,13 +23,10 @@ class MainApp
             switch menuItem {
             case 1:
                 self.append()
-                //self.start()
             case 2:
                 self.showCars()
-                //self.start()
             case 3:
                 self.filterCars()
-                //self.start()
             default:
                 return
             }
@@ -54,7 +50,7 @@ class MainApp
     
     func showCars() {
         for car in cars {
-            printCar(car: car)
+            printCar(car)
         }
         return self.start()
     }
@@ -67,23 +63,19 @@ class MainApp
         }
         for car in cars {
             if car.bodyType == selectedBody {
-                printCar(car: car)
+                printCar(car)
             }
         }
         return self.start()
     }
     
-    func printCar(car: Car) {
+    func printCar(_ car: Car) {
         print("____________")
         print("Марка : \(car.manufacturer)")
         print("Модель : \(car.model)")
         print("Тип кузова : \(car.bodyType)")
-        if let year = car.yearOfIssue {
-            if year != "" {
-                print("Год выпуска : \(year)")
-            } else {
-                print("Год выпуска : -")
-            }
+        if let year = car.yearOfIssue, !year.isEmpty{
+            print("Год выпуска : \(year)")
         } else {
             print("Год выпуска : -")
         }
