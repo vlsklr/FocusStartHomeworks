@@ -7,15 +7,14 @@
 import Foundation
 
 class ThreadSafeArray<Type: Equatable> {
-    
-    
+        
     var isEmpty: Bool = true
     var count: Int = 0
     private var itemsArray = [Type]()
-    let barrierQueue = DispatchQueue(label: "MyBarrierQueue", attributes: .concurrent)
+    private let barrierQueue = DispatchQueue(label: "MyBarrierQueue", attributes: .concurrent)
     
     func append(_ item: Type) {
-        barrierQueue.async(flags: .barrier) {
+        self.barrierQueue.async(flags: .barrier)  {
             self.itemsArray.append(item)
             self.count += 1
             self.isEmpty = self.count == 0 ? true : false
@@ -25,7 +24,7 @@ class ThreadSafeArray<Type: Equatable> {
     }
     
     func remove(at index: Int) {
-        barrierQueue.async(flags: .barrier){
+        self.barrierQueue.async(flags: .barrier){
             if index < self.count {
                 self.itemsArray.remove(at: index)
                 self.count -= 1
@@ -36,7 +35,7 @@ class ThreadSafeArray<Type: Equatable> {
     
     subscript(index: Int) -> String {
         var answer = "Index out of range"
-        barrierQueue.sync {
+        self.barrierQueue.sync {
             if index < self.count {
                 answer = "\(self.itemsArray[index])"
             }
@@ -45,7 +44,7 @@ class ThreadSafeArray<Type: Equatable> {
     }
     
     func contains(_ element: Type) -> Bool {
-        barrierQueue.sync {
+        self.barrierQueue.sync {
             if self.itemsArray.firstIndex(of: element) != nil{
                 return true
             }

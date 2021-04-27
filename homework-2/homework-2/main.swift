@@ -10,6 +10,7 @@ import Foundation
 
 
 var myArr = ThreadSafeArray<Int>()
+var threadSafeStringArray = ThreadSafeArray<String>()
 let queue = DispatchQueue(label: "MyConcurrentQueue",  attributes: .concurrent)
 
 func insertValues() {
@@ -18,19 +19,28 @@ func insertValues() {
     }
 }
 
-queue.async {
-    insertValues()
+func insertStrings(_ value: String) {
+    for i in 0...1000 {
+        threadSafeStringArray.append("\(i) + \(value)")
+    }
+    
 }
-insertValues()
 
 queue.async {
     insertValues()
+    insertStrings("Val")
 }
-print(myArr.count)
-//print(myArr.contains(345))
-//print (myArr[0])
-//myArr.remove(at: 0)
-//myArr.remove(at: 0)
-//print (myArr[0])
-//print(myArr.isEmpty)
+
+queue.async {
+    insertValues()
+    insertStrings("ues")
+}
+sleep(5)
+print("Int array count \(myArr.count) is empty: \(myArr.isEmpty)")
+print("String array \(threadSafeStringArray.count) is empty \(threadSafeStringArray.isEmpty)")
+print(myArr[0])
+print(threadSafeStringArray.contains("12345"))
+threadSafeStringArray.remove(at: 5)
+sleep(5)
+print(threadSafeStringArray.count)
 
