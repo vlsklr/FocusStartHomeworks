@@ -7,48 +7,54 @@
 import Foundation
 
 class ThreadSafeArray<Type: Equatable> {
-        
-    var isEmpty: Bool = true
-    var count: Int = 0
+    
     private var itemsArray = [Type]()
     private let barrierQueue = DispatchQueue(label: "MyBarrierQueue", attributes: .concurrent)
+    var isEmpty: Bool {
+        var returnIsEmpty = false
+        barrierQueue.sync {
+            returnIsEmpty = self.itemsArray.isEmpty
+        }
+        return returnIsEmpty
+    }
+    var count: Int {
+        get {
+            var returnCount = 0
+            barrierQueue.sync {
+                returnCount =  self.itemsArray.count
+            }
+            return returnCount
+        }
+    }
     
     func append(_ item: Type) {
         self.barrierQueue.async(flags: .barrier)  {
             self.itemsArray.append(item)
-            self.count += 1
-            self.isEmpty = self.count == 0 ? true : false
         }
-        
-        
     }
     
     func remove(at index: Int) {
         self.barrierQueue.async(flags: .barrier){
-            if index < self.count {
+            if index < self.count && index >= 0 {
                 self.itemsArray.remove(at: index)
-                self.count -= 1
-                self.isEmpty = self.count == 0 ? true : false
             }
         }
     }
     
-    subscript(index: Int) -> String {
-        var answer = "Index out of range"
+    subscript(index: Int) -> Type? {
+        var item: Type?
+        
         self.barrierQueue.sync {
-            if index < self.count {
-                answer = "\(self.itemsArray[index])"
+            if index < self.count && index > 0 {
+                item = self.itemsArray[index]
             }
         }
-        return answer
+        return item
     }
     
     func contains(_ element: Type) -> Bool {
         self.barrierQueue.sync {
-            if self.itemsArray.firstIndex(of: element) != nil{
-                return true
-            }
-            return false
+            return itemsArray.contains(element)
         }
         
     }

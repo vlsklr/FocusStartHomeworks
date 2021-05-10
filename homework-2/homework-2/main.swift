@@ -25,22 +25,23 @@ func insertStrings(_ value: String) {
     }
     
 }
-
+print(threadSafeStringArray.isEmpty)
+var group = DispatchGroup()
+group.enter()
 queue.async {
     insertValues()
     insertStrings("Val")
+    group.leave()
 }
-
+group.enter()
 queue.async {
     insertValues()
     insertStrings("ues")
+    group.leave()
 }
-sleep(5)
+group.wait()
 print("Int array count \(myArr.count) is empty: \(myArr.isEmpty)")
 print("String array \(threadSafeStringArray.count) is empty \(threadSafeStringArray.isEmpty)")
-print(myArr[0])
-print(threadSafeStringArray.contains("12345"))
-threadSafeStringArray.remove(at: 5)
-sleep(5)
-print(threadSafeStringArray.count)
+
+
 
