@@ -43,9 +43,8 @@ class ThreadSafeArray<Type: Equatable> {
     
     subscript(index: Int) -> Type? {
         var item: Type?
-        
         self.barrierQueue.sync {
-            if index < self.count && index > 0 {
+            if index < self.count && index >= 0 {
                 item = self.itemsArray[index]
             }
         }
