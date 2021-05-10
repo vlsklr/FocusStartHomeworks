@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 var myArr = ThreadSafeArray<Int>()
 var threadSafeStringArray = ThreadSafeArray<String>()
 let queue = DispatchQueue(label: "MyConcurrentQueue",  attributes: .concurrent)
@@ -25,6 +23,7 @@ func insertStrings(_ value: String) {
     }
     
 }
+
 print(threadSafeStringArray.isEmpty)
 var group = DispatchGroup()
 group.enter()
