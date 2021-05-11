@@ -9,15 +9,29 @@ import UIKit
 
 class FirstVC: UIViewController {
     
+    @IBOutlet weak var ageTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.ageTextField.delegate = self
     }
     
-    
     @IBAction func ageButtonAction() {
-        let ageAlert = UIAlertController(title: "Мой возраст", message: "27", preferredStyle: .alert)
+        var ageResponse = ""
+        if ageTextField.text == "27" {
+            ageResponse = "Ты угадал"
+        }else{
+            ageResponse = "Ты не угадал"
+        }
+        
+        let ageAlert = UIAlertController(title: "Мой возраст 27", message: ageResponse, preferredStyle: .alert)
         ageAlert.addAction(UIAlertAction(title: "Понятно", style: .default))
         self.present(ageAlert, animated: true)
+    }
+}
+extension FirstVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
 }

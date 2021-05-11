@@ -10,6 +10,7 @@ class ThreadSafeArray<Type: Equatable> {
     
     private var itemsArray = [Type]()
     private let barrierQueue = DispatchQueue(label: "MyBarrierQueue", attributes: .concurrent)
+    
     var isEmpty: Bool {
         var returnIsEmpty = false
         barrierQueue.sync {
@@ -17,6 +18,7 @@ class ThreadSafeArray<Type: Equatable> {
         }
         return returnIsEmpty
     }
+    
     var count: Int {
         get {
             var returnCount = 0
@@ -28,15 +30,15 @@ class ThreadSafeArray<Type: Equatable> {
     }
     
     func append(_ item: Type) {
-        self.barrierQueue.async(flags: .barrier)  {
-            self.itemsArray.append(item)
+        self.barrierQueue.async(flags: .barrier) { [weak self] in
+            self?.itemsArray.append(item)
         }
     }
     
     func remove(at index: Int) {
-        self.barrierQueue.async(flags: .barrier){
-            if index < self.count && index >= 0 {
-                self.itemsArray.remove(at: index)
+        self.barrierQueue.async(flags: .barrier) { [weak self] in
+            if index < self?.count ?? -1 && index >= 0 {
+                self?.itemsArray.remove(at: index)
             }
         }
     }

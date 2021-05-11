@@ -101,7 +101,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qW-bl-mjM">
-                                <rect key="frame" x="179" y="351" width="49" height="30"/>
+                                <rect key="frame" x="302" y="351" width="49" height="30"/>
                                 <state key="normal" title="Узнать"/>
                                 <connections>
                                     <action selector="ageButtonAction" destination="dH9-Tg-BWh" eventType="touchUpInside" id="43V-Ua-OAB"/>
@@ -113,14 +113,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Введи возраст" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cl3-a8-rXO">
+                                <rect key="frame" x="175" y="349" width="97" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fCJ-aI-RD2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6qW-bl-mjM" firstAttribute="leading" secondItem="taL-i2-Tjw" secondAttribute="trailing" constant="93" id="7yu-6q-Qli"/>
                             <constraint firstItem="6qW-bl-mjM" firstAttribute="top" secondItem="A7x-oT-mYB" secondAttribute="bottom" constant="43" id="9Zn-xH-Y9X"/>
                             <constraint firstItem="A7x-oT-mYB" firstAttribute="leading" secondItem="ldn-SD-o0z" secondAttribute="trailing" constant="84" id="9jg-DA-If7"/>
+                            <constraint firstItem="6qW-bl-mjM" firstAttribute="leading" secondItem="cl3-a8-rXO" secondAttribute="trailing" constant="25" id="AKU-Mj-SjL"/>
                             <constraint firstItem="Qq0-E2-dyL" firstAttribute="leading" secondItem="fCJ-aI-RD2" secondAttribute="leading" constant="20" id="Eji-W7-yJi"/>
+                            <constraint firstItem="cl3-a8-rXO" firstAttribute="leading" secondItem="taL-i2-Tjw" secondAttribute="trailing" constant="89" id="Epe-AB-at2"/>
                             <constraint firstItem="ldn-SD-o0z" firstAttribute="leading" secondItem="fCJ-aI-RD2" secondAttribute="leading" constant="20" id="IXR-0v-UCT"/>
                             <constraint firstItem="ghn-0f-Ela" firstAttribute="leading" secondItem="fCJ-aI-RD2" secondAttribute="leading" constant="20" id="Mmz-yr-Ajd"/>
                             <constraint firstItem="taL-i2-Tjw" firstAttribute="leading" secondItem="fCJ-aI-RD2" secondAttribute="leading" constant="20" id="RbK-TP-PH5"/>
@@ -133,6 +139,7 @@
                             <constraint firstItem="LDm-Hl-QjF" firstAttribute="top" secondItem="LdV-sZ-r50" secondAttribute="bottom" constant="32" id="i0u-DH-8AD"/>
                             <constraint firstItem="Ar0-rp-65n" firstAttribute="top" secondItem="taL-i2-Tjw" secondAttribute="bottom" constant="40" id="kgW-yN-J6e"/>
                             <constraint firstItem="g3w-Fp-zwG" firstAttribute="leading" secondItem="Ar0-rp-65n" secondAttribute="trailing" constant="112" id="ko3-zt-9mp"/>
+                            <constraint firstItem="cl3-a8-rXO" firstAttribute="top" secondItem="A7x-oT-mYB" secondAttribute="bottom" constant="41" id="ktN-2Z-3Ih"/>
                             <constraint firstItem="LDm-Hl-QjF" firstAttribute="leading" secondItem="ghn-0f-Ela" secondAttribute="trailing" constant="126" id="oj8-JB-DRi"/>
                             <constraint firstItem="g3w-Fp-zwG" firstAttribute="top" secondItem="6qW-bl-mjM" secondAttribute="bottom" constant="35" id="s9F-Qc-zea"/>
                             <constraint firstItem="A7x-oT-mYB" firstAttribute="top" secondItem="LDm-Hl-QjF" secondAttribute="bottom" constant="34" id="uRH-wY-aNr"/>
@@ -140,6 +147,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Обо мне" image="person.fill" catalog="system" id="MrW-NM-NQS"/>
+                    <connections>
+                        <outlet property="ageTextField" destination="cl3-a8-rXO" id="MfY-7C-MNj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAN-Yv-ruZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
