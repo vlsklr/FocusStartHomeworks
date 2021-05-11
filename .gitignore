@@ -88,3 +88,5 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+homework-3/Pods/SnapKit
+homework-3/Pods/Target Support Files
