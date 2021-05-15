@@ -10,6 +10,7 @@ import UIKit
 class FirstVC: UIViewController {
     
     @IBOutlet weak var ageTextField: UITextField!
+    let model = DataModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
