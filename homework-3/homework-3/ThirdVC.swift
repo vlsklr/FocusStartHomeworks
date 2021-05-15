@@ -14,15 +14,32 @@ class ThirdVC: UIViewController {
         super.viewDidLoad()
         initThirdVC()
     }
+    let thirdVCTitle = UILabel()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        
+        
+    }
+    let skiiOrBoard = UIButton(type: .system)
     @objc func btnAction() {
         let alert = UIAlertController(title: "Почему или?", message: "И!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Понятно", style: .default))
-        self.present(alert, animated: true)
+        //self.present(alert, animated: true)
+        
+        var animator = UIViewPropertyAnimator()
+        animator = UIViewPropertyAnimator(duration: 0.5, curve: .easeOut, animations: {
+         
+            self.skiiOrBoard.backgroundColor = .black
+         
+        })
+         
+        animator.startAnimation()
     }
     
     func initThirdVC() {
         let thirdVCData = ThirdVCData()
-        let thirdVCTitle = UILabel()
+        
         thirdVCTitle.text = "Мои увлечения"
         self.view.addSubview(thirdVCTitle)
         thirdVCTitle.snp.makeConstraints { (constr) in
@@ -81,7 +98,7 @@ class ThirdVC: UIViewController {
             constr.top.equalTo(myFavSportText).inset(50)
         }
         
-        let skiiOrBoard = UIButton(type: .system)
+        
         skiiOrBoard.setTitle("⛷ или 🏂", for: .normal)
         skiiOrBoard.backgroundColor = .darkGray
         skiiOrBoard.layer.cornerRadius = 10
