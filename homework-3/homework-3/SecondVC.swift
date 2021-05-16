@@ -28,7 +28,6 @@ class SecondVC: UIViewController {
     }
     
     func initVC() {
-        view.backgroundColor = .cyan
         label.numberOfLines = 0
         view.addSubview(label)
         view.addSubview(myswitch)
