@@ -66,7 +66,6 @@ class ThirdVC: UIViewController {
     
     func initThirdVC() {
         view.backgroundColor = .blue
-        
         thirdVCTitle.text = "Мои увлечения"
         self.view.addSubview(thirdVCTitle)
         thirdVCTitle.snp.makeConstraints { (constr) in
@@ -82,7 +81,6 @@ class ThirdVC: UIViewController {
         }
         myHobbies.layer.masksToBounds = true
         myHobbies.layer.cornerRadius = 5
-        //myHobbies.layer.borderWidth = 2
         myHobbies.backgroundColor = .cyan
         
         myHobbiesText.text = thirdVCData.myHobbies
@@ -111,7 +109,6 @@ class ThirdVC: UIViewController {
         myFavSportText.layer.masksToBounds = true
         myFavSportText.textColor = .white
         self.view.addSubview(myFavSportText)
-        
         myFavSportText.snp.makeConstraints { (constr) in
             constr.right.equalToSuperview().inset(16)
             constr.top.equalTo(myHobbiesText).inset(225)
