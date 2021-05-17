@@ -52,6 +52,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C38232B26523486001B00A9 /* MVCFirstScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3C38232D265234A9001B00A9 /* Controller */,
+				3C38232C2652349D001B00A9 /* View */,
+			);
+			path = MVCFirstScreen;
+			sourceTree = "<group>";
+		};
+		3C38232C2652349D001B00A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3CBC4B22264934AE00F00F65 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3C38232D265234A9001B00A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3CBC4B322649465300F00F65 /* FirstVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		3CBC4B10264934AE00F00F65 = {
 			isa = PBXGroup;
 			children = (
@@ -73,10 +98,9 @@
 		3CBC4B1B264934AE00F00F65 /* homework-3 */ = {
 			isa = PBXGroup;
 			children = (
+				3C38232B26523486001B00A9 /* MVCFirstScreen */,
 				3CBC4B1C264934AE00F00F65 /* AppDelegate.swift */,
 				3CBC4B1E264934AE00F00F65 /* SceneDelegate.swift */,
-				3CBC4B22264934AE00F00F65 /* Main.storyboard */,
-				3CBC4B322649465300F00F65 /* FirstVC.swift */,
 				3CBC4B35264947E500F00F65 /* SecondVC.swift */,
 				3CBC4B38264947F100F00F65 /* ThirdVC.swift */,
 				3C862F8C264B9F8800F8458D /* ThirdVCData.swift */,

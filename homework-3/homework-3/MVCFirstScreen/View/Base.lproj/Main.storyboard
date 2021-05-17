@@ -107,8 +107,8 @@
                                     <action selector="ageButtonAction" destination="dH9-Tg-BWh" eventType="touchUpInside" id="43V-Ua-OAB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скляров" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdV-sZ-r50">
-                                <rect key="frame" x="179" y="179" width="68" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdV-sZ-r50">
+                                <rect key="frame" x="179" y="179" width="4.3333333333333428" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -149,6 +149,10 @@
                     <tabBarItem key="tabBarItem" title="Обо мне" image="person.fill" catalog="system" id="MrW-NM-NQS"/>
                     <connections>
                         <outlet property="ageTextField" destination="cl3-a8-rXO" id="MfY-7C-MNj"/>
+                        <outlet property="cityLabel" destination="g3w-Fp-zwG" id="6tL-Uk-VuY"/>
+                        <outlet property="firstNameLabel" destination="LdV-sZ-r50" id="2xQ-Zt-YO7"/>
+                        <outlet property="patronymLabel" destination="A7x-oT-mYB" id="YQ7-ne-FII"/>
+                        <outlet property="secondNameLabel" destination="LDm-Hl-QjF" id="U8c-Fm-lM6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAN-Yv-ruZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
