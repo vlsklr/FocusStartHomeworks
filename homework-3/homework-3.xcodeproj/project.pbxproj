@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C3823342652BF5A001B00A9 /* SecondScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3823332652BF5A001B00A9 /* SecondScreenPresenter.swift */; };
 		3C848CE9264FA96F0018D9F2 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C848CE8264FA96F0018D9F2 /* DataModel.swift */; };
 		3C862F8D264B9F8800F8458D /* ThirdVCData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C862F8C264B9F8800F8458D /* ThirdVCData.swift */; };
 		3CBC4B1D264934AE00F00F65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC4B1C264934AE00F00F65 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C3823332652BF5A001B00A9 /* SecondScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenPresenter.swift; sourceTree = "<group>"; };
 		3C848CE8264FA96F0018D9F2 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		3C862F8C264B9F8800F8458D /* ThirdVCData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVCData.swift; sourceTree = "<group>"; };
 		3CBC4B19264934AE00F00F65 /* homework-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "homework-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,31 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		3C3823302652BF22001B00A9 /* SecondScreenMVP */ = {
+			isa = PBXGroup;
+			children = (
+				3C3823322652BF34001B00A9 /* Presenter */,
+				3C3823312652BF2E001B00A9 /* View */,
+			);
+			path = SecondScreenMVP;
+			sourceTree = "<group>";
+		};
+		3C3823312652BF2E001B00A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3CBC4B35264947E500F00F65 /* SecondVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3C3823322652BF34001B00A9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3C3823332652BF5A001B00A9 /* SecondScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		3CBC4B10264934AE00F00F65 = {
 			isa = PBXGroup;
 			children = (
@@ -98,10 +125,10 @@
 		3CBC4B1B264934AE00F00F65 /* homework-3 */ = {
 			isa = PBXGroup;
 			children = (
+				3C3823302652BF22001B00A9 /* SecondScreenMVP */,
 				3C38232B26523486001B00A9 /* MVCFirstScreen */,
 				3CBC4B1C264934AE00F00F65 /* AppDelegate.swift */,
 				3CBC4B1E264934AE00F00F65 /* SceneDelegate.swift */,
-				3CBC4B35264947E500F00F65 /* SecondVC.swift */,
 				3CBC4B38264947F100F00F65 /* ThirdVC.swift */,
 				3C862F8C264B9F8800F8458D /* ThirdVCData.swift */,
 				3CBC4B4326495B8300F00F65 /* SecondVCData.swift */,
@@ -246,6 +273,7 @@
 			files = (
 				3CBC4B4426495B8300F00F65 /* SecondVCData.swift in Sources */,
 				3CBC4B1D264934AE00F00F65 /* AppDelegate.swift in Sources */,
+				3C3823342652BF5A001B00A9 /* SecondScreenPresenter.swift in Sources */,
 				3CBC4B332649465300F00F65 /* FirstVC.swift in Sources */,
 				3CBC4B36264947E500F00F65 /* SecondVC.swift in Sources */,
 				3C862F8D264B9F8800F8458D /* ThirdVCData.swift in Sources */,
