@@ -20,7 +20,6 @@
 		3CBC4B332649465300F00F65 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC4B322649465300F00F65 /* FirstVC.swift */; };
 		3CBC4B36264947E500F00F65 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC4B35264947E500F00F65 /* SecondVC.swift */; };
 		3CBC4B39264947F100F00F65 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC4B38264947F100F00F65 /* ThirdVC.swift */; };
-		3CBC4B4426495B8300F00F65 /* SecondVCData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC4B4326495B8300F00F65 /* SecondVCData.swift */; };
 		70440B0421ADA145961DE3B2 /* Pods_homework_3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5B0EAE25B6B3567618E4AD /* Pods_homework_3.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +39,6 @@
 		3CBC4B322649465300F00F65 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		3CBC4B35264947E500F00F65 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		3CBC4B38264947F100F00F65 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
-		3CBC4B4326495B8300F00F65 /* SecondVCData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVCData.swift; sourceTree = "<group>"; };
 		4C5B0EAE25B6B3567618E4AD /* Pods_homework_3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_homework_3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		691C27313470B93F19A5D4E5 /* Pods-homework-3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homework-3.debug.xcconfig"; path = "Target Support Files/Pods-homework-3/Pods-homework-3.debug.xcconfig"; sourceTree = "<group>"; };
 		ACEB6BFFE4D2052FBDD6E885 /* Pods-homework-3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homework-3.release.xcconfig"; path = "Target Support Files/Pods-homework-3/Pods-homework-3.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				3CBC4B1E264934AE00F00F65 /* SceneDelegate.swift */,
 				3CBC4B38264947F100F00F65 /* ThirdVC.swift */,
 				3C862F8C264B9F8800F8458D /* ThirdVCData.swift */,
-				3CBC4B4326495B8300F00F65 /* SecondVCData.swift */,
 				3CBC4B25264934AF00F00F65 /* Assets.xcassets */,
 				3CBC4B27264934AF00F00F65 /* LaunchScreen.storyboard */,
 				3CBC4B2A264934AF00F00F65 /* Info.plist */,
@@ -278,7 +275,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C6A6BCD2654E4B30075014A /* ISecondScreenView.swift in Sources */,
-				3CBC4B4426495B8300F00F65 /* SecondVCData.swift in Sources */,
 				3CBC4B1D264934AE00F00F65 /* AppDelegate.swift in Sources */,
 				3C3823342652BF5A001B00A9 /* SecondScreenPresenter.swift in Sources */,
 				3CBC4B332649465300F00F65 /* FirstVC.swift in Sources */,
