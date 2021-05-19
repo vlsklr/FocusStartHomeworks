@@ -6,20 +6,23 @@
 //
 
 import Foundation
+import UIKit
 
-class SecondScreenPresenter {
-    private var _switcherState = false
+class SecondScreenPresenter: ISecondViewPresenter {
+   
+    weak var view: ISecondScreenView?
     let model = DataModel()
-    var switcherState: Bool {
-        
-        set(state) {
-            _switcherState = state
-        }
-        get {
-            return _switcherState
-        }
+    
+    init(view: ISecondScreenView) {
+        self.view = view
     }
-    var returnString: String {
-        return self.switcherState ? model.devInfo.iosInfo : model.devInfo.nonIosInfo
+    
+    init() {
+        
+    }
+    
+    func updateData(isOn: Bool) {
+        let answer = isOn ? model.devInfo.iosInfo : model.devInfo.nonIosInfo
+        view?.showInfo(answer: answer)
     }
 }

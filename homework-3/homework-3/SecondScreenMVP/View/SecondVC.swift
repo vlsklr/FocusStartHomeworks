@@ -7,29 +7,31 @@
 
 import UIKit
 
-class SecondVC: UIViewController {
-    
+class SecondVC: UIViewController, ISecondScreenView {
+   
     let label = UILabel(frame: CGRect(x: 35, y: 50, width: 300, height: 400))
     let myswitch = UISwitch(frame: CGRect(x: UIScreen.main.bounds.width / 2 - 25, y: 550, width: 100, height: 100))
-    let presenter = SecondScreenPresenter()
+    var presenter: ISecondViewPresenter = SecondScreenPresenter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = SecondScreenPresenter(view: self)
         initVC()
     }
     
     @objc func switchStateDidChange(_ sender:UISwitch){
-        presenter.switcherState = sender.isOn
-        label.text = presenter.returnString
+        presenter.updateData(isOn: sender.isOn)
     }
     
     func initVC() {
         label.numberOfLines = 0
         view.addSubview(label)
         view.addSubview(myswitch)
-        
-        presenter.switcherState = myswitch.isOn
-        label.text = presenter.returnString
+        presenter.updateData(isOn: myswitch.isOn)
         myswitch.addTarget(self, action: #selector(SecondVC.switchStateDidChange(_:)), for: .valueChanged)
     }
     
+    func showInfo(answer: String) {
+        label.text = answer
+    }
 }
