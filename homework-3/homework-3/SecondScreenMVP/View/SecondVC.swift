@@ -11,7 +11,6 @@ class SecondVC: UIViewController, ISecondScreenView {
    
     let label = UILabel(frame: CGRect(x: 35, y: 50, width: 300, height: 400))
     let myswitch = UISwitch(frame: CGRect(x: UIScreen.main.bounds.width / 2 - 25, y: 450, width: 100, height: 100))
-    let table = TableView(frame: CGRect(x: UIScreen.main.bounds.width / 2 - 25, y: 550, width: 100, height: 100))
     var presenter: ISecondViewPresenter = SecondScreenPresenter()
     
     override func viewDidLoad() {
@@ -28,8 +27,6 @@ class SecondVC: UIViewController, ISecondScreenView {
         label.numberOfLines = 0
         view.addSubview(label)
         view.addSubview(myswitch)
-        view.addSubview(table)
-        table.register(CustomTableViewCell.self, forCellReuseIdentifier: "TableViewCell")
         presenter.updateData(isOn: myswitch.isOn)
         myswitch.addTarget(self, action: #selector(SecondVC.switchStateDidChange(_:)), for: .valueChanged)
     }

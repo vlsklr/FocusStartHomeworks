@@ -24,6 +24,35 @@
             </objects>
             <point key="canvasLocation" x="2494" y="415"/>
         </scene>
+        <!--Всякое-->
+        <scene sceneID="w6E-eo-jzB">
+            <objects>
+                <tableViewController id="yPu-PF-dx6" customClass="TableViewController" customModule="homework_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1RG-mv-URO">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="UhQ-kP-ZtM" customClass="TableViewCell" customModule="homework_3" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="428" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UhQ-kP-ZtM" id="Y47-9z-eDa">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yPu-PF-dx6" id="RGV-49-94h"/>
+                            <outlet property="delegate" destination="yPu-PF-dx6" id="kTc-nI-rTf"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Всякое" image="trash" catalog="system" id="Lww-0T-CJM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T0d-xG-59I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3416" y="415"/>
+        </scene>
         <!--Что по разработке?-->
         <scene sceneID="bsx-1A-dKy">
             <objects>
@@ -172,6 +201,7 @@
                         <segue destination="dH9-Tg-BWh" kind="relationship" relationship="viewControllers" id="Jyb-y2-lP5"/>
                         <segue destination="fLZ-It-egT" kind="relationship" relationship="viewControllers" id="l9Y-dl-iWs"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="EFd-MM-1fD"/>
+                        <segue destination="yPu-PF-dx6" kind="relationship" relationship="viewControllers" id="RHc-JG-QdB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oG8-ov-oiJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -183,6 +213,7 @@
         <image name="book.fill" catalog="system" width="128" height="102"/>
         <image name="guitars.fill" catalog="system" width="128" height="100"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
