@@ -11,6 +11,7 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 100
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,10 +35,9 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-        cell.tittleLabel.text = "123"
-        cell.tittleLabel.textColor = .black
-        // Configure the cell...
-
+        cell.tittleLabel.text = "456"
+        cell.cellTextLabel.text = "789"
+        
         return cell
     }
     
