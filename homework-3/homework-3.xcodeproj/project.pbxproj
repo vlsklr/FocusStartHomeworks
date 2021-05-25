@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C36DF03265CC64E00010111 /* TableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36DF02265CC64E00010111 /* TableViewCellPresenter.swift */; };
+		3C36DF06265CC6BB00010111 /* ITableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36DF05265CC6BB00010111 /* ITableViewCellView.swift */; };
 		3C3823342652BF5A001B00A9 /* SecondScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3823332652BF5A001B00A9 /* SecondScreenPresenter.swift */; };
 		3C6A6BCD2654E4B30075014A /* ISecondScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A6BCC2654E4B30075014A /* ISecondScreenView.swift */; };
 		3C6A6BD02654EE340075014A /* ISecondViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A6BCF2654EE340075014A /* ISecondViewPresenter.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C36DF02265CC64E00010111 /* TableViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCellPresenter.swift; path = "homework-3/SecondScreenMVP/View/TableViewCellPresenter.swift"; sourceTree = SOURCE_ROOT; };
+		3C36DF05265CC6BB00010111 /* ITableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ITableViewCellView.swift; path = "homework-3/SecondScreenMVP/View/ITableViewCellView.swift"; sourceTree = SOURCE_ROOT; };
 		3C3823332652BF5A001B00A9 /* SecondScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenPresenter.swift; sourceTree = "<group>"; };
 		3C6A6BCC2654E4B30075014A /* ISecondScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISecondScreenView.swift; sourceTree = "<group>"; };
 		3C6A6BCF2654EE340075014A /* ISecondViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISecondViewPresenter.swift; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 		F525DC352659146D00315EFC /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				3C36DF02265CC64E00010111 /* TableViewCellPresenter.swift */,
+				3C36DF05265CC6BB00010111 /* ITableViewCellView.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -304,8 +310,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C36DF06265CC6BB00010111 /* ITableViewCellView.swift in Sources */,
 				3C6A6BCD2654E4B30075014A /* ISecondScreenView.swift in Sources */,
 				3CBC4B1D264934AE00F00F65 /* AppDelegate.swift in Sources */,
+				3C36DF03265CC64E00010111 /* TableViewCellPresenter.swift in Sources */,
 				3C3823342652BF5A001B00A9 /* SecondScreenPresenter.swift in Sources */,
 				3CBC4B332649465300F00F65 /* FirstVC.swift in Sources */,
 				3CBC4B36264947E500F00F65 /* SecondVC.swift in Sources */,

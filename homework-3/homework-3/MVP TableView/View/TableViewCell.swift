@@ -8,7 +8,9 @@
 import UIKit
 import SnapKit
 
-class TableViewCell: UITableViewCell {
+class TableViewCell: UITableViewCell, ITableViewCellView {
+ 
+    
     
     var tittleLabel = UILabel()
     var cellTextLabel = UILabel()
@@ -42,5 +44,9 @@ class TableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+    }
+    
+    func setTittle(tittle: String) {
+        tittleLabel.text = tittle
     }
 }
