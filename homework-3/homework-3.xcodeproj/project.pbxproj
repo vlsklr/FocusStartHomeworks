@@ -10,6 +10,8 @@
 		3C36DF03265CC64E00010111 /* TableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36DF02265CC64E00010111 /* TableViewCellPresenter.swift */; };
 		3C36DF06265CC6BB00010111 /* ITableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36DF05265CC6BB00010111 /* ITableViewCellView.swift */; };
 		3C3823342652BF5A001B00A9 /* SecondScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3823332652BF5A001B00A9 /* SecondScreenPresenter.swift */; };
+		3C649957265EAA820033D526 /* ITableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C649956265EAA820033D526 /* ITableVC.swift */; };
+		3C64995B265EAB090033D526 /* TableViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C64995A265EAB090033D526 /* TableViewControllerPresenter.swift */; };
 		3C6A6BCD2654E4B30075014A /* ISecondScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A6BCC2654E4B30075014A /* ISecondScreenView.swift */; };
 		3C6A6BD02654EE340075014A /* ISecondViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A6BCF2654EE340075014A /* ISecondViewPresenter.swift */; };
 		3C848CE9264FA96F0018D9F2 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C848CE8264FA96F0018D9F2 /* DataModel.swift */; };
@@ -28,9 +30,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3C36DF02265CC64E00010111 /* TableViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCellPresenter.swift; path = "homework-3/SecondScreenMVP/View/TableViewCellPresenter.swift"; sourceTree = SOURCE_ROOT; };
-		3C36DF05265CC6BB00010111 /* ITableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ITableViewCellView.swift; path = "homework-3/SecondScreenMVP/View/ITableViewCellView.swift"; sourceTree = SOURCE_ROOT; };
+		3C36DF02265CC64E00010111 /* TableViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCellPresenter.swift; path = "homework-3/MVP TableView/View/TableViewCellPresenter.swift"; sourceTree = SOURCE_ROOT; };
+		3C36DF05265CC6BB00010111 /* ITableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ITableViewCellView.swift; path = "homework-3/MVP TableView/View/ITableViewCellView.swift"; sourceTree = SOURCE_ROOT; };
 		3C3823332652BF5A001B00A9 /* SecondScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenPresenter.swift; sourceTree = "<group>"; };
+		3C649956265EAA820033D526 /* ITableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITableVC.swift; sourceTree = "<group>"; };
+		3C64995A265EAB090033D526 /* TableViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerPresenter.swift; sourceTree = "<group>"; };
 		3C6A6BCC2654E4B30075014A /* ISecondScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISecondScreenView.swift; sourceTree = "<group>"; };
 		3C6A6BCF2654EE340075014A /* ISecondViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISecondViewPresenter.swift; sourceTree = "<group>"; };
 		3C848CE8264FA96F0018D9F2 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -181,8 +185,6 @@
 		F525DC352659146D00315EFC /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				3C36DF02265CC64E00010111 /* TableViewCellPresenter.swift */,
-				3C36DF05265CC6BB00010111 /* ITableViewCellView.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -192,6 +194,10 @@
 			children = (
 				F525DC382659181400315EFC /* TableViewController.swift */,
 				F525DC3B2659182F00315EFC /* TableViewCell.swift */,
+				3C36DF05265CC6BB00010111 /* ITableViewCellView.swift */,
+				3C649956265EAA820033D526 /* ITableVC.swift */,
+				3C64995A265EAB090033D526 /* TableViewControllerPresenter.swift */,
+				3C36DF02265CC64E00010111 /* TableViewCellPresenter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,6 +326,8 @@
 				3C862F8D264B9F8800F8458D /* ThirdVCData.swift in Sources */,
 				F525DC392659181400315EFC /* TableViewController.swift in Sources */,
 				3C848CE9264FA96F0018D9F2 /* DataModel.swift in Sources */,
+				3C64995B265EAB090033D526 /* TableViewControllerPresenter.swift in Sources */,
+				3C649957265EAA820033D526 /* ITableVC.swift in Sources */,
 				3CBC4B1F264934AE00F00F65 /* SceneDelegate.swift in Sources */,
 				F525DC3C2659182F00315EFC /* TableViewCell.swift in Sources */,
 				3C6A6BD02654EE340075014A /* ISecondViewPresenter.swift in Sources */,

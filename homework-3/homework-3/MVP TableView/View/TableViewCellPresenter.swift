@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TableViewCellPresenter {
+public class TableViewCellPresenter {
     
     private weak var cellView: ITableViewCellView?
     private let tittleText: String
