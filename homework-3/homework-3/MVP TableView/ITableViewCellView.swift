@@ -8,5 +8,6 @@
 import Foundation
 
 protocol ITableViewCellView: AnyObject {
-    func setTittle(tittle: String)    
+    func setTittle(tittle: String)
+    func setMainText(text: String)
 }

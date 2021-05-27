@@ -11,6 +11,5 @@ protocol ITableVC: AnyObject {
     
     var cellsCountHandler: (() -> Int)? { get set }
     var cellWillShowHandler: ((_ cell: ITableViewCellView, _ atIndex: Int) -> Void)? {  get set }
-
     func update()
 }

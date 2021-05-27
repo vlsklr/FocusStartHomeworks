@@ -11,9 +11,11 @@ public class TableViewCellPresenter {
     
     private weak var cellView: ITableViewCellView?
     private let tittleText: String
+    private let hobbieText: String
     
-    init(tittleText: String) {
+    init(tittleText: String, hobbieText: String) {
         self.tittleText = tittleText
+        self.hobbieText = hobbieText
         
     }
     
@@ -24,6 +26,7 @@ public class TableViewCellPresenter {
     
     private func updateView() {
         self.cellView?.setTittle(tittle: tittleText)
+        self.cellView?.setMainText(text: hobbieText)
     }
     
 }
