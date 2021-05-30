@@ -88,3 +88,66 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+homework-3/Pods/SnapKit
+homework-3/Pods/Target Support Files
+.DS_Store
+practice2905/Pods/Manifest.lock
+practice2905/Pods/Pods.xcodeproj/project.pbxproj
+practice2905/Pods/SnapKit/LICENSE
+practice2905/Pods/SnapKit/README.md
+practice2905/Pods/SnapKit/Source/Constraint.swift
+practice2905/Pods/SnapKit/Source/ConstraintAttributes.swift
+practice2905/Pods/SnapKit/Source/ConstraintConfig.swift
+practice2905/Pods/SnapKit/Source/ConstraintConstantTarget.swift
+practice2905/Pods/SnapKit/Source/ConstraintDescription.swift
+practice2905/Pods/SnapKit/Source/ConstraintDirectionalInsets.swift
+practice2905/Pods/SnapKit/Source/ConstraintDirectionalInsetTarget.swift
+practice2905/Pods/SnapKit/Source/ConstraintDSL.swift
+practice2905/Pods/SnapKit/Source/ConstraintInsets.swift
+practice2905/Pods/SnapKit/Source/ConstraintInsetTarget.swift
+practice2905/Pods/SnapKit/Source/ConstraintItem.swift
+practice2905/Pods/SnapKit/Source/ConstraintLayoutGuide+Extensions.swift
+practice2905/Pods/SnapKit/Source/ConstraintLayoutGuide.swift
+practice2905/Pods/SnapKit/Source/ConstraintLayoutGuideDSL.swift
+practice2905/Pods/SnapKit/Source/ConstraintLayoutSupport.swift
+practice2905/Pods/SnapKit/Source/ConstraintLayoutSupportDSL.swift
+practice2905/Pods/SnapKit/Source/ConstraintMaker.swift
+practice2905/Pods/SnapKit/Source/ConstraintMakerEditable.swift
+practice2905/Pods/SnapKit/Source/ConstraintMakerExtendable.swift
+practice2905/Pods/SnapKit/Source/ConstraintMakerFinalizable.swift
+practice2905/Pods/SnapKit/Source/ConstraintMakerPriortizable.swift
+practice2905/Pods/SnapKit/Source/ConstraintMakerRelatable.swift
+practice2905/Pods/SnapKit/Source/ConstraintMultiplierTarget.swift
+practice2905/Pods/SnapKit/Source/ConstraintOffsetTarget.swift
+practice2905/Pods/SnapKit/Source/ConstraintPriority.swift
+practice2905/Pods/SnapKit/Source/ConstraintPriorityTarget.swift
+practice2905/Pods/SnapKit/Source/ConstraintRelatableTarget.swift
+practice2905/Pods/SnapKit/Source/ConstraintRelation.swift
+practice2905/Pods/SnapKit/Source/ConstraintView+Extensions.swift
+practice2905/Pods/SnapKit/Source/ConstraintView.swift
+practice2905/Pods/SnapKit/Source/ConstraintViewDSL.swift
+practice2905/Pods/SnapKit/Source/Debugging.swift
+practice2905/Pods/SnapKit/Source/LayoutConstraint.swift
+practice2905/Pods/SnapKit/Source/LayoutConstraintItem.swift
+practice2905/Pods/SnapKit/Source/Typealiases.swift
+practice2905/Pods/SnapKit/Source/UILayoutSupport+Extensions.swift
+practice2905/Pods/Target Support Files/Pods-practice2905/Pods-practice2905-acknowledgements.markdown
+practice2905/Pods/Target Support Files/Pods-practice2905/Pods-practice2905-acknowledgements.plist
+practice2905/Pods/Target Support Files/Pods-practice2905/Pods-practice2905-dummy.m
+practice2905/Pods/Target Support Files/Pods-practice2905/Pods-practice2905-frameworks-Debug-input-files.xcfilelist
+practice2905/Pods/Target Support Files/Pods-practice2905/Pods-practice2905-frameworks-Debug-output-files.xcfilelist
+practice2905/Pods/Target Support Files/Pods-practice2905/Pods-practice2905-frameworks-Release-input-files.xcfilelist
+practice2905/Pods/Target Support Files/Pods-practice2905/Pods-practice2905-frameworks-Release-output-files.xcfilelist
+practice2905/Pods/Target Support Files/Pods-practice2905/Pods-practice2905-frameworks.sh
+practice2905/Pods/Target Support Files/Pods-practice2905/Pods-practice2905-Info.plist
+practice2905/Pods/Target Support Files/Pods-practice2905/Pods-practice2905-umbrella.h
+practice2905/Pods/Target Support Files/Pods-practice2905/Pods-practice2905.debug.xcconfig
+practice2905/Pods/Target Support Files/Pods-practice2905/Pods-practice2905.modulemap
+practice2905/Pods/Target Support Files/Pods-practice2905/Pods-practice2905.release.xcconfig
+practice2905/Pods/Target Support Files/SnapKit/SnapKit-dummy.m
+practice2905/Pods/Target Support Files/SnapKit/SnapKit-Info.plist
+practice2905/Pods/Target Support Files/SnapKit/SnapKit-prefix.pch
+practice2905/Pods/Target Support Files/SnapKit/SnapKit-umbrella.h
+practice2905/Pods/Target Support Files/SnapKit/SnapKit.debug.xcconfig
+practice2905/Pods/Target Support Files/SnapKit/SnapKit.modulemap
+practice2905/Pods/Target Support Files/SnapKit/SnapKit.release.xcconfig
