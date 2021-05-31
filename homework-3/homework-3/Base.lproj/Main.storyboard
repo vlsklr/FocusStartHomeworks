@@ -11,7 +11,7 @@
         <!--Увлечения-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ThirdVC" customModule="homework_3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myHobbies" id="BYZ-38-t0r" customClass="ThirdVC" customModule="homework_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
         <!--Что по разработке?-->
         <scene sceneID="bsx-1A-dKy">
             <objects>
-                <viewController id="fLZ-It-egT" customClass="SecondVC" customModule="homework_3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="devInfo" id="fLZ-It-egT" customClass="SecondVC" customModule="homework_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="81v-1h-InG" customClass="Sec">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
         <!--Обо мне-->
         <scene sceneID="HMM-xm-Tdf">
             <objects>
-                <viewController id="dH9-Tg-BWh" customClass="FirstVC" customModule="homework_3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="aboutMe" id="dH9-Tg-BWh" customClass="FirstVC" customModule="homework_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qK0-jK-tq7">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
