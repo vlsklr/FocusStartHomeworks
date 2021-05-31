@@ -10,7 +10,7 @@ import UIKit
 
 class Router {
     private let mainStoryboard: UIStoryboard
-    private let tabbar: UITabBarController
+    private let tabBar: UITabBarController
     
     private let firstNavigationController: UINavigationController
     private let firstViewController: FirstVC
@@ -29,7 +29,7 @@ class Router {
     
     init() {
         self.mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        self.tabbar = UITabBarController(nibName: "Main.storyboard", bundle: nil)
+        self.tabBar = UITabBarController(nibName: "Main.storyboard", bundle: nil)
         
         self.firstViewController = mainStoryboard.instantiateViewController(withIdentifier: "aboutMe") as! FirstVC
         self.firstNavigationController = UINavigationController(rootViewController: self.firstViewController)
@@ -40,7 +40,7 @@ class Router {
         self.thirdViewController = mainStoryboard.instantiateViewController(withIdentifier: "myHobbies") as! ThirdVC
         self.thirdNavigationController = UINavigationController(rootViewController: self.thirdViewController)
         
-        self.tabbar.setViewControllers([self.firstNavigationController,
+        self.tabBar.setViewControllers([self.firstNavigationController,
                                         self.secondNavigationController,
                                         self.thirdNavigationController],
                                         animated: true)
@@ -49,6 +49,6 @@ class Router {
     }
     
     internal func returnController() -> UITabBarController {
-        return self.tabbar
+        return self.tabBar
     }
 }
