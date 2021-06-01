@@ -8,8 +8,8 @@
 import UIKit
 import SnapKit
 
-class ThirdVC: UIViewController {
-    
+class ThirdVC: UIViewController, ILoggerProtocol {
+    let scrollView = UIScrollView()
     let thirdVCTitle = UILabel()
     let myHobbies = UILabel()
     let myHobbiesText = UILabel()
@@ -18,7 +18,7 @@ class ThirdVC: UIViewController {
     let myNewHobbie = UILabel()
     let myNewHobbieText = UILabel()
     let skiiOrBoard = UIButton(type: .system)
-    
+    let pushViewControllerButton = UIButton(type: .system)
     let thirdVCData = ThirdVCData()
     
     override func viewDidLoad() {
@@ -26,10 +26,23 @@ class ThirdVC: UIViewController {
         initThirdVC()
         didLoadAnimate()
         
+        
+    }
+    
+    func printState(state: String) {
+        print("ThirdVC has \(state)")
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+        super.viewDidAppear(animated)
+        printState(state: "appeared")
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        printState(state: "disappeared")
+
     }
     
     func didLoadAnimate() {
@@ -46,63 +59,37 @@ class ThirdVC: UIViewController {
         }
     }
     
-    @objc func btnAction() {
+    @objc func buttonAction() {
         var animator = UIViewPropertyAnimator()
         animator = UIViewPropertyAnimator(duration: 0.5, curve: .easeOut, animations: {
-            
             self.skiiOrBoard.backgroundColor = .black
-            
         })
-        
         animator.startAnimation()
-        
         let alert = UIAlertController(title: "Почему или?", message: "И!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Понятно", style: .default))
         self.present(alert, animated: true)
-        
+    }
+    
+    @objc func tableViewOpener() {
+        let pushViewController = PushViewController()
+        self.navigationController?.pushViewController(pushViewController, animated: true)
         
         
     }
     
-    func initThirdVC() {
-        
-        let scrollView: UIScrollView = {
-            let scrollView = UIScrollView()
-            scrollView.translatesAutoresizingMaskIntoConstraints = false
-            scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height + (tabBarController?.tabBar.bounds.height ?? 100))
-            scrollView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-            return scrollView
-        }()
-        
+    func initScrollView() {
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height + (tabBarController?.tabBar.bounds.height ?? 100))
         self.view.addSubview(scrollView)
-        scrollView.snp.makeConstraints { make in
-            make.top.bottom.leading.trailing.equalTo(view)
-            make.height.equalTo(scrollView.contentSize.height)
-            make.width.equalTo(view.bounds.width)
+        scrollView.snp.makeConstraints { constr in
+            constr.top.bottom.leading.trailing.equalTo(view)
+            constr.height.equalTo(scrollView.contentSize.height)
+            constr.width.equalTo(view.bounds.width)
         }
         
-//        let contentView = UIView()
-//        scrollView.addSubview(contentView)
-//        contentView.snp.makeConstraints { make in
-//            make.top.bottom.leading.trailing.equalTo(scrollView)
-//            make.height.equalTo(scrollView.contentSize.height).inset(150)
-//            make.width.equalTo(view.bounds.width)
-//        }
-        
-        view.backgroundColor = .blue
-        thirdVCTitle.text = "Мои увлечения"
-        scrollView.addSubview(thirdVCTitle)
-        thirdVCTitle.snp.makeConstraints { (constr) in
-            constr.left.equalToSuperview().inset(130)
-            constr.top.equalToSuperview().inset(50)
-//            constr.leading.equalTo(contentView.snp.leading).inset(130)
-//            constr.top.equalTo(contentView.snp.top).inset(50)
-            
-              
-            
-            
-        }
-        
+    }
+    
+    func initMyHobbies() {
         myHobbies.text = "Мои увлечения"
         scrollView.addSubview(myHobbies)
         myHobbies.snp.makeConstraints { (constr) in
@@ -127,12 +114,13 @@ class ThirdVC: UIViewController {
         }
         myHobbiesText.layer.masksToBounds = true
         myHobbiesText.textColor = .white
-        
+    }
+    
+    func initMyFavoriteSport() {
         myFavSport.numberOfLines = 0
         myFavSport.text = "Мой любимый вид спорта"
         scrollView.addSubview(myFavSport)
         myFavSport.snp.makeConstraints { (constr) in
-
             constr.left.equalToSuperview().inset(16)
             constr.top.equalTo(myHobbiesText).inset(250)
             constr.width.equalTo(150)
@@ -151,7 +139,9 @@ class ThirdVC: UIViewController {
             constr.top.equalTo(myHobbiesText).inset(250)
             constr.height.equalTo(250)
         }
-        
+    }
+    
+    func initMyNewHobbie() {
         myNewHobbie.text = "Мое новое увлечение"
         scrollView.addSubview(myNewHobbie)
         myNewHobbie.layer.masksToBounds = true
@@ -164,32 +154,57 @@ class ThirdVC: UIViewController {
             constr.width.equalTo(150)
             constr.height.equalTo(250)
         }
-        
         myNewHobbieText.text = thirdVCData.newHobbie
         scrollView.addSubview(myNewHobbieText)
         myNewHobbieText.textColor = .white
         myNewHobbieText.snp.makeConstraints { (constr) in
-
             constr.left.equalTo(myNewHobbie).offset(175)
             constr.top.equalTo(myFavSportText).inset(250)
             constr.height.equalTo(250)
         }
-        
+    }
+    
+    func initButton() {
         skiiOrBoard.setTitle("⛷ или 🏂", for: .normal)
         skiiOrBoard.backgroundColor = .darkGray
         skiiOrBoard.layer.cornerRadius = 10
         skiiOrBoard.layer.borderWidth = 3
         skiiOrBoard.layer.borderColor = .init(red: 1/255, green: 255/255, blue: 255/255, alpha: 1)
         scrollView.addSubview(skiiOrBoard)
-        skiiOrBoard.addTarget(self, action: #selector(ThirdVC.btnAction), for: .allEvents)
+        skiiOrBoard.addTarget(self, action: #selector(ThirdVC.buttonAction), for: .allEvents)
         skiiOrBoard.snp.makeConstraints { (constr) in
-            constr.top.equalTo(myNewHobbieText).inset(250)
+            constr.top.equalTo(myNewHobbieText).inset(265)
             constr.centerX.equalToSuperview()
             constr.width.equalTo(125)
-//
-//            constr.top.equalTo(myNewHobbieText).inset(250)
-//            constr.centerX.equalTo(contentView.snp.centerX)
-//            constr.width.equalTo(125)
         }
+    }
+    
+    func initPushViewControllerButton() {
+        pushViewControllerButton.setTitle("Какой то текст", for: .normal)
+        pushViewControllerButton.backgroundColor = .brown
+        scrollView.addSubview(pushViewControllerButton)
+        pushViewControllerButton.addTarget(self, action: #selector(ThirdVC.tableViewOpener), for: .touchUpInside)
+        pushViewControllerButton.snp.makeConstraints { (constr) in
+            constr.top.equalTo(skiiOrBoard).inset(50)
+            constr.bottom.equalToSuperview().inset(75	)
+            constr.centerX.equalToSuperview()
+            constr.width.equalTo(125)
+        }
+    }
+    
+    func initThirdVC() {
+        view.backgroundColor = .blue
+        thirdVCTitle.text = "Мои увлечения"
+        scrollView.addSubview(thirdVCTitle)
+        thirdVCTitle.snp.makeConstraints { (constr) in
+            constr.left.equalToSuperview().inset(130)
+            constr.top.equalToSuperview().inset(50)
+        }
+        initMyHobbies()
+        initMyFavoriteSport()
+        initMyNewHobbie()
+        initButton()
+        initPushViewControllerButton()
+        initScrollView()
     }
 }

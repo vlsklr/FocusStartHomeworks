@@ -6,7 +6,23 @@
 //
 
 import Foundation
+import UIKit
 
-class PopViewController {
+class PopViewController: UIViewController, ILoggerProtocol {
+    func printState(state: String) {
+        print("PopViewController has \(state)")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        printState(state: "appeared")
+        
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        printState(state: "disappeared")
+
+    }
+    override func viewDidLoad() {
+        self.view.backgroundColor = .systemRed
+    }
     
 }
