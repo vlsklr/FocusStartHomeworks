@@ -5,7 +5,6 @@
 //  Created by Vlad on 31.05.2021.
 //
 
-import Foundation
 import UIKit
 
 class Router {
@@ -37,9 +36,7 @@ class Router {
         self.tabBar.setViewControllers([self.firstNavigationController,
                                         self.secondNavigationController,
                                         self.thirdNavigationController],
-                                        animated: true)
-        
-        
+                                       animated: true)
     }
     
     internal func returnController() -> UITabBarController {

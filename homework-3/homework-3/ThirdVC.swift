@@ -68,8 +68,6 @@ class ThirdVC: UIViewController, ILoggerProtocol {
     @objc func tableViewOpener() {
         let pushViewController = PushViewController()
         self.navigationController?.pushViewController(pushViewController, animated: true)
-        
-        
     }
     
     func initScrollView() {
@@ -81,7 +79,6 @@ class ThirdVC: UIViewController, ILoggerProtocol {
             constr.height.equalTo(scrollView.contentSize.height)
             constr.width.equalTo(view.bounds.width)
         }
-        
     }
     
     func initMyHobbies() {

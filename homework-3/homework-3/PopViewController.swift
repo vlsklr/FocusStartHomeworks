@@ -5,7 +5,6 @@
 //  Created by Vlad on 31.05.2021.
 //
 
-import Foundation
 import UIKit
 
 class PopViewController: UIViewController, ILoggerProtocol {
@@ -17,11 +16,9 @@ class PopViewController: UIViewController, ILoggerProtocol {
     
     override func viewDidAppear(_ animated: Bool) {
         printState(state: "appeared")
-        
     }
     override func viewDidDisappear(_ animated: Bool) {
         printState(state: "disappeared")
-
     }
     override func viewDidLoad() {
         self.view.backgroundColor = .systemRed
@@ -32,7 +29,6 @@ class PopViewController: UIViewController, ILoggerProtocol {
         
         let myCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         myCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "catCell")
-        myCollectionView.backgroundColor = UIColor.white
         myCollectionView.dataSource = self
         
         view.addSubview(myCollectionView)

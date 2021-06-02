@@ -31,17 +31,14 @@ class FirstVC: UIViewController, ILoggerProtocol {
     
     func printState(state: String) {
         print("FirstVC has \(state)")
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
         printState(state: "appeared")
-        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         printState(state: "disappeared")
-
     }
 }
 extension FirstVC: UITextFieldDelegate {

@@ -19,17 +19,14 @@ class PushViewController: UITableViewController, ILoggerProtocol {
     
     func printState(state: String) {
         print("PushViewController has \(state)")
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         printState(state: "appeared")
-        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         printState(state: "disappeared")
-        
     }
     
     override func viewDidLoad() {
@@ -42,7 +39,6 @@ class PushViewController: UITableViewController, ILoggerProtocol {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return quotes.count
     }
     
@@ -51,6 +47,5 @@ class PushViewController: UITableViewController, ILoggerProtocol {
         cell.textLabel?.text = quotes[indexPath.row]
         cell.textLabel?.numberOfLines = 0
         return cell
-        
     }
 }
