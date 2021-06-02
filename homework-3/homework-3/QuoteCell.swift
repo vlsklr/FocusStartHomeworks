@@ -10,5 +10,4 @@ import UIKit
 
 class QuoteCell: UITableViewCell {
     let quoteLabel = UILabel()
-    
 }

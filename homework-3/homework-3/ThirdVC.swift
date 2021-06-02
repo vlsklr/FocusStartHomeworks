@@ -25,24 +25,19 @@ class ThirdVC: UIViewController, ILoggerProtocol {
         super.viewDidLoad()
         initThirdVC()
         didLoadAnimate()
-        
-        
     }
     
     func printState(state: String) {
         print("ThirdVC has \(state)")
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         printState(state: "appeared")
-        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         printState(state: "disappeared")
-
     }
     
     func didLoadAnimate() {

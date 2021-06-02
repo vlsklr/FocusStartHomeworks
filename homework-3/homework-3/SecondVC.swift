@@ -30,10 +30,9 @@ class SecondVC: UIViewController, ILoggerProtocol {
     
     func initPopButton() {
         popButton.backgroundColor = .green
-        popButton.setTitle("Открой всякое", for: .normal)
+        popButton.setTitle("Покажи котиков", for: .normal)
         popButton.addTarget(self, action: #selector(SecondVC.popButtonAction), for: .touchUpInside)
         view.addSubview(popButton)
-        
     }
     
     func initSwitch() {

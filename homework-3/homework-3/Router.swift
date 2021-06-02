@@ -21,12 +21,6 @@ class Router {
     private let thirdNavigationController: UINavigationController
     private let thirdViewController: ThirdVC
     
-    //private let popNavigationController: UINavigationController
-    //private let popViewController: PopViewController
-    
-    //private let pushNavigationController: UINavigationController
-    //private let pushViewController: PushViewController
-    
     init() {
         self.mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         self.tabBar = UITabBarController(nibName: "Main.storyboard", bundle: nil)
