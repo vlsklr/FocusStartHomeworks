@@ -12,8 +12,7 @@ class SecondVC: UIViewController, ILoggerProtocol {
     let myTexts = SecondVCData()
     let label = UILabel(frame: CGRect(x: 35, y: 50, width: 300, height: 400))
     let myswitch = UISwitch(frame: CGRect(x: UIScreen.main.bounds.width / 2 - 25, y: 550, width: 100, height: 100))
-    let popButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width / 2 - 50, y: 600, width: 100, height: 100))
-
+    let popButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width / 2 - 75, y: 600, width: 150, height: 50))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,20 +28,29 @@ class SecondVC: UIViewController, ILoggerProtocol {
         }
     }
     
-    func initVC() {
-        label.numberOfLines = 0
+    func initPopButton() {
         popButton.backgroundColor = .green
-        popButton.setTitle("Text", for: .normal)
+        popButton.setTitle("Открой всякое", for: .normal)
         popButton.addTarget(self, action: #selector(SecondVC.popButtonAction), for: .touchUpInside)
-        view.addSubview(label)
-        view.addSubview(myswitch)
         view.addSubview(popButton)
+        
+    }
+    
+    func initSwitch() {
+        view.addSubview(myswitch)
         if myswitch.isOn {
             label.text = myTexts.iOSText
         } else {
             label.text = myTexts.noniOSText
         }
         myswitch.addTarget(self, action: #selector(SecondVC.switchStateDidChange(_:)), for: .valueChanged)
+    }
+    
+    func initVC() {
+        label.numberOfLines = 0
+        view.addSubview(label)
+        initPopButton()
+        initSwitch()
     }
     
     @objc func popButtonAction() {
@@ -52,17 +60,13 @@ class SecondVC: UIViewController, ILoggerProtocol {
     
     func printState(state: String) {
         print("SecondVC has \(state)")
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
         printState(state: "appeared")
-        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         printState(state: "disappeared")
-
     }
-    
 }

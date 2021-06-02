@@ -180,8 +180,8 @@ class ThirdVC: UIViewController, ILoggerProtocol {
     }
     
     func initPushViewControllerButton() {
-        pushViewControllerButton.setTitle("Какой то текст", for: .normal)
-        pushViewControllerButton.backgroundColor = .brown
+        pushViewControllerButton.setTitle("Покажи цитатки", for: .normal)
+        pushViewControllerButton.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
         scrollView.addSubview(pushViewControllerButton)
         pushViewControllerButton.addTarget(self, action: #selector(ThirdVC.tableViewOpener), for: .touchUpInside)
         pushViewControllerButton.snp.makeConstraints { (constr) in
