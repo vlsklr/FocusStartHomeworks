@@ -17,6 +17,9 @@
 		3CCF77F3266B9C18007540D9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCF77F2266B9C18007540D9 /* NetworkManager.swift */; };
 		3CCF77F6266B9C35007540D9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCF77F5266B9C35007540D9 /* Model.swift */; };
 		51843928BA6B7146BD8CF559 /* Pods_homework_7.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF43C02A00DF7F05EC434F6 /* Pods_homework_7.framework */; };
+		F536F6E9266C7DC300B29508 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F536F6E8266C7DC300B29508 /* Presenter.swift */; };
+		F536F6EC266C7DCE00B29508 /* IPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F536F6EB266C7DCE00B29508 /* IPresenter.swift */; };
+		F536F6EF266C7DD900B29508 /* IView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F536F6EE266C7DD900B29508 /* IView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		3CCF77F5266B9C35007540D9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4FF43C02A00DF7F05EC434F6 /* Pods_homework_7.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_homework_7.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E79550FE4C415F633B2FC36 /* Pods-homework-7.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homework-7.release.xcconfig"; path = "Target Support Files/Pods-homework-7/Pods-homework-7.release.xcconfig"; sourceTree = "<group>"; };
+		F536F6E8266C7DC300B29508 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		F536F6EB266C7DCE00B29508 /* IPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPresenter.swift; sourceTree = "<group>"; };
+		F536F6EE266C7DD900B29508 /* IView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,9 @@
 				3CC567F0266A187D00413134 /* SceneDelegate.swift */,
 				3CC567F2266A187D00413134 /* ViewController.swift */,
 				3CCF77F2266B9C18007540D9 /* NetworkManager.swift */,
+				F536F6E8266C7DC300B29508 /* Presenter.swift */,
+				F536F6EB266C7DCE00B29508 /* IPresenter.swift */,
+				F536F6EE266C7DD900B29508 /* IView.swift */,
 				3CCF77F5266B9C35007540D9 /* Model.swift */,
 				3CC567F4266A187D00413134 /* Main.storyboard */,
 				3CC567F7266A187E00413134 /* Assets.xcassets */,
@@ -215,8 +224,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CC56807266A2B8C00413134 /* DownloadedCell.swift in Sources */,
+				F536F6EF266C7DD900B29508 /* IView.swift in Sources */,
+				F536F6E9266C7DC300B29508 /* Presenter.swift in Sources */,
 				3CC567F3266A187D00413134 /* ViewController.swift in Sources */,
 				3CCF77F3266B9C18007540D9 /* NetworkManager.swift in Sources */,
+				F536F6EC266C7DCE00B29508 /* IPresenter.swift in Sources */,
 				3CCF77F6266B9C35007540D9 /* Model.swift in Sources */,
 				3CC567EF266A187D00413134 /* AppDelegate.swift in Sources */,
 				3CC567F1266A187D00413134 /* SceneDelegate.swift in Sources */,
@@ -296,7 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -351,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

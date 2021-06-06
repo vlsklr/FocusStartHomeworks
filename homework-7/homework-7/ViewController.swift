@@ -8,7 +8,9 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, IView {
+
+    
     
     let searchBar = UISearchBar()
     let tableView = UITableView()
@@ -22,20 +24,20 @@ class ViewController: UIViewController {
         initTableView()
     }
     
-    func loadImg(url: String) -> Data {
-        var img = Data()
-        self.networkManager.loadImage(urlString: url) { [weak self] result in
-            
-            switch result {
-            case .success(let image):
-                img = image
-            case .failure(let error):
-                print(error)
-
-            }
-        }
-        return img
-    }
+//    func loadImg(url: String) -> Data {
+//        var img = Data()
+//        self.networkManager.loadImage(urlString: url) { [weak self] result in
+//
+//            switch result {
+//            case .success(let image):
+//                img = image
+//            case .failure(let error):
+//                print(error)
+//
+//            }
+//        }
+//        return img
+//    }
     
     func initSearchbar() {
         view.addSubview(searchBar)
@@ -61,25 +63,22 @@ class ViewController: UIViewController {
             constraint.height.equalToSuperview()
         }
     }
+    func updateView() {
+        self.tableView.reloadData()
+    }
 }
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchBarText = searchBar.text else { return }
         print(searchBarText)
-        let queue = DispatchQueue(label: "MyConcurrentQueue",  attributes: .concurrent)
-        var group = DispatchGroup()
-        var imgdata = Data()
-        group.enter()
-        queue.async {
-             imgdata = self.loadImg(url: searchBarText)
-            group.leave()
-        }
-        group.wait()
-        let element = Model(url: searchBarText, image: imgdata)
-        loadedImages.append(element)
+
+//        let element = Model(url: searchBarText, image: imgdata)
+//        loadedImages.append(element)
+//
+//
+//        tableView.reloadData()
         
         
-        tableView.reloadData()
         //self.presenter?.requestForNewImage(urlString: searchBarText)
         //self.reloadDataInController()
         //searchBar.resignFirstResponder()
