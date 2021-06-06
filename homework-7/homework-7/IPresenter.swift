@@ -9,4 +9,7 @@ import Foundation
 
 protocol IPresenter {
     func downloadImage(stringURL: String)
+    func getDownloadedDataFromModel(for indexPath: IndexPath) -> Model
+    func getCountOfCells() -> Int
+
 }

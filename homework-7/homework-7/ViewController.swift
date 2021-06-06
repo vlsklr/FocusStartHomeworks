@@ -9,11 +9,12 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController, IView {
-
+    
     
     
     let searchBar = UISearchBar()
     let tableView = UITableView()
+    var presenter: IPresenter?
     private let networkManager = NetworkManager()
     var loadedImages = [Model]()
     
@@ -22,22 +23,23 @@ class ViewController: UIViewController, IView {
         super.viewDidLoad()
         initSearchbar()
         initTableView()
+        presenter = Presenter(view: self)
     }
     
-//    func loadImg(url: String) -> Data {
-//        var img = Data()
-//        self.networkManager.loadImage(urlString: url) { [weak self] result in
-//
-//            switch result {
-//            case .success(let image):
-//                img = image
-//            case .failure(let error):
-//                print(error)
-//
-//            }
-//        }
-//        return img
-//    }
+    //    func loadImg(url: String) -> Data {
+    //        var img = Data()
+    //        self.networkManager.loadImage(urlString: url) { [weak self] result in
+    //
+    //            switch result {
+    //            case .success(let image):
+    //                img = image
+    //            case .failure(let error):
+    //                print(error)
+    //
+    //            }
+    //        }
+    //        return img
+    //    }
     
     func initSearchbar() {
         view.addSubview(searchBar)
@@ -71,12 +73,12 @@ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchBarText = searchBar.text else { return }
         print(searchBarText)
-
-//        let element = Model(url: searchBarText, image: imgdata)
-//        loadedImages.append(element)
-//
-//
-//        tableView.reloadData()
+        
+        //        let element = Model(url: searchBarText, image: imgdata)
+        //        loadedImages.append(element)
+        //
+        //
+        //        tableView.reloadData()
         
         
         //self.presenter?.requestForNewImage(urlString: searchBarText)
@@ -87,23 +89,25 @@ extension ViewController: UISearchBarDelegate {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return loadedImages.count
+        return presenter?.getCountOfCells() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DownloadedCell
         //
-        cell.link.text = loadedImages[indexPath.row].url
+        //cell.link.text = loadedImages[indexPath.row].url
         
         cell.setupCell()
+        let cellData = presenter?.getDownloadedDataFromModel(for: indexPath)
+        cell.downloadedImage.image = UIImage(data: cellData?.image ?? Data())
+        cell.link.text = cellData?.url
         
-      
-            cell.downloadedImage.image = UIImage(data: self.loadedImages[indexPath.row].image!)
-	
+        // cell.downloadedImage.image = UIImage(data: self.loadedImages[indexPath.row].image!)
+        
         
         //cell.link.text = "123"
-       // cell = loadImg(cell: cell)
+        // cell = loadImg(cell: cell)
         //cell.downloadedImage.image = loadImg()
         
         return cell
