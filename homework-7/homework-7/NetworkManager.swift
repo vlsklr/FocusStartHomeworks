@@ -19,33 +19,12 @@ class NetworkManager: NSObject {
     
     
     
-    func loadImage(urlString: String) {
-        if let url = URL(string: urlString) {
+    func loadImage(url: URL) {
             downloadTask = backgroundSession.downloadTask(with: url)
-            //downloadTask.earliestBeginDate = Date().addingTimeInterval(1)
             downloadTask.countOfBytesClientExpectsToSend = 512
             downloadTask.countOfBytesClientExpectsToReceive = 100 * 1024 * 10 // 10MB
             downloadTask.resume()
-        }
         
-        //            guard let url = URL(string: urlString) else {
-        //                return
-        //            }
-        //            var request = URLRequest(url: url)
-        //            request.httpMethod = "GET"
-        //
-        //            URLSession.shared.dataTask(with: request) { data, _, error in
-        //                if let error = error {
-        //                    completion(.failure(error))
-        //                }
-        //                if let data = data {
-        //                    DispatchQueue.main.async {
-        //
-        //
-        //                    completion(.success(data))
-        //                    }
-        //                }
-        //            }.resume()
     }
 }
 
@@ -61,10 +40,7 @@ extension NetworkManager: URLSessionDelegate {
 
 extension NetworkManager: URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        
-        
-//        print("did finish downloading \(location.absoluteString)")
-        
+   
         DispatchQueue.main.async {
             self.fileLocation?(location)
         }

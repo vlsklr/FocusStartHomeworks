@@ -9,4 +9,5 @@ import Foundation
 
 protocol IView {
     func updateView()
+    func showAlert(alertText: String)
 }
