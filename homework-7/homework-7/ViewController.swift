@@ -10,10 +10,6 @@ import SnapKit
 
 class ViewController: UIViewController, IView {
     
-    
-    
-    
-    
     let searchBar = UISearchBar()
     let tableView = UITableView()
     var presenter: IPresenter?

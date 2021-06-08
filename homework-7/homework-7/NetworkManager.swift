@@ -5,7 +5,6 @@
 //  Created by user188734 on 6/5/21.
 //
 
-import Foundation
 import UIKit
 
 class NetworkManager: NSObject {
@@ -20,10 +19,10 @@ class NetworkManager: NSObject {
     
     
     func loadImage(url: URL) {
-            downloadTask = backgroundSession.downloadTask(with: url)
-            downloadTask.countOfBytesClientExpectsToSend = 512
-            downloadTask.countOfBytesClientExpectsToReceive = 100 * 1024 * 10 // 10MB
-            downloadTask.resume()
+        downloadTask = backgroundSession.downloadTask(with: url)
+        downloadTask.countOfBytesClientExpectsToSend = 512
+        downloadTask.countOfBytesClientExpectsToReceive = 100 * 1024 * 10 // 10MB
+        downloadTask.resume()
         
     }
 }
@@ -40,7 +39,7 @@ extension NetworkManager: URLSessionDelegate {
 
 extension NetworkManager: URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-   
+        
         DispatchQueue.main.async {
             self.fileLocation?(location)
         }
