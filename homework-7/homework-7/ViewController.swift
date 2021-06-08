@@ -73,6 +73,7 @@ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchBarText = searchBar.text else { return }
         print(searchBarText)
+        presenter?.downloadImage(stringURL: searchBarText)
         
         //        let element = Model(url: searchBarText, image: imgdata)
         //        loadedImages.append(element)

@@ -16,12 +16,21 @@ class Presenter: IPresenter {
     
     init(view: IView) {
         self.view = view
-        let tmp = Model(url: "temp", image: Data())
-        loadedImages.append(tmp)
+        
     }
     
     func downloadImage(stringURL: String) {
         networkManager.loadImage(urlString: stringURL)
+        self.networkManager.fileLocation = { (location) in
+            print("did finish downloading \(location.absoluteString)")
+            if let data = try? Data(contentsOf: location) {
+                let loaded = Model(url: stringURL, image: data)
+                self.loadedImages.append(loaded)
+            }
+        }
+//        let tmp = Model(url: stringURL, image: Data())
+//        loadedImages.append(tmp)
+        view.updateView()
 //        networkManager.loadImage(urlString: stringURL) { [weak self] result in
       //  }
     }

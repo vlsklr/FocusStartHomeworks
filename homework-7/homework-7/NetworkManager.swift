@@ -12,7 +12,7 @@ class NetworkManager: NSObject {
     var downloadTask: URLSessionDownloadTask!
     var fileLocation: ((URL) -> ())?
     
-    private lazy var bgSession: URLSession = {
+    private lazy var backgroundSession: URLSession = {
         let config = URLSessionConfiguration.background(withIdentifier: "downloadSomething")
         return URLSession(configuration: config, delegate: self, delegateQueue: nil)
     }()
@@ -21,8 +21,8 @@ class NetworkManager: NSObject {
     
     func loadImage(urlString: String) {
         if let url = URL(string: urlString) {
-            downloadTask = bgSession.downloadTask(with: url)
-            downloadTask.earliestBeginDate = Date().addingTimeInterval(1)
+            downloadTask = backgroundSession.downloadTask(with: url)
+            //downloadTask.earliestBeginDate = Date().addingTimeInterval(1)
             downloadTask.countOfBytesClientExpectsToSend = 512
             downloadTask.countOfBytesClientExpectsToReceive = 100 * 1024 * 10 // 10MB
             downloadTask.resume()
@@ -50,12 +50,24 @@ class NetworkManager: NSObject {
 }
 
 extension NetworkManager: URLSessionDelegate {
-    
+    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
+        DispatchQueue.main.async {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let completionHandler = appDelegate.backgroundSessionCompletionHandler else { return }
+            appDelegate.backgroundSessionCompletionHandler = nil
+            completionHandler()
+        }
+    }
 }
 
 extension NetworkManager: URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         
+        
+//        print("did finish downloading \(location.absoluteString)")
+        
+        DispatchQueue.main.async {
+            self.fileLocation?(location)
+        }
     }
     
     
