@@ -32,12 +32,17 @@ class Presenter: IPresenter {
                             self.view.updateView()
                         }
                     } else {
-                        self.view.showAlert(alertText: "Файл не загрузился")
+                        
+                        DispatchQueue.main.async {
+                            self.view.showAlert(alertText: "Файл не загрузился")
+                        }
                     }
                 }
             }
         }else{
-            view.showAlert(alertText: "С URL что-то не так")
+            DispatchQueue.main.async {
+                self.view.showAlert(alertText: "С URL что-то не так")
+            }
         }
     }
     
