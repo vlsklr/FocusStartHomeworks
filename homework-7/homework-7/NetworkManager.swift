@@ -39,10 +39,7 @@ extension NetworkManager: URLSessionDelegate {
 
 extension NetworkManager: URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        
-        DispatchQueue.main.async {
             self.fileLocation?(location)
-        }
     }
     
     

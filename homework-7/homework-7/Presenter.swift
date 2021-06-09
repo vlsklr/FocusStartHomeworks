@@ -26,14 +26,16 @@ class Presenter: IPresenter {
                     print("Размер загруженного файла \(data.count)")
                     if data.count > 0 {
                         let loaded = Model(url: stringURL, image: data)
-                        self.loadedImages.append(loaded)
                         
+                        self.loadedImages.append(loaded)
+                        DispatchQueue.main.async {
+                            self.view.updateView()
+                        }
                     } else {
                         self.view.showAlert(alertText: "Файл не загрузился")
                     }
                 }
             }
-            view.updateView()
         }else{
             view.showAlert(alertText: "С URL что-то не так")
         }
@@ -43,6 +45,7 @@ class Presenter: IPresenter {
         let modelCell = loadedImages[indexPath.row]
         return modelCell
     }
+    
     func getCountOfCells() -> Int {
         return loadedImages.count
     }
