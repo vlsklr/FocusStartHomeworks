@@ -5,27 +5,42 @@
 //  Created by user188734 on 6/5/21.
 //
 
-import Foundation
+import UIKit
 
-class NetworkManager {
+class NetworkManager: NSObject {
+    var downloadTask: URLSessionDownloadTask!
+    var fileLocation: ((URL) -> ())?
+    
+    private lazy var backgroundSession: URLSession = {
+        let config = URLSessionConfiguration.background(withIdentifier: "downloadSomething")
+        return URLSession(configuration: config, delegate: self, delegateQueue: nil)
+    }()
     
     
-        func loadImage(urlString: String, completion: @escaping (Result<Data, Error>) -> Void) {
-            
-            guard let url = URL(string: urlString) else {
-                return
-            }
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            
-            URLSession.shared.dataTask(with: request) { data, _, error in
-                if let error = error {
-                    completion(.failure(error))
-                }
-                if let data = data {
-                    completion(.success(data))
-                }
-            }.resume()
+    
+    func loadImage(url: URL) {
+        downloadTask = backgroundSession.downloadTask(with: url)
+        downloadTask.countOfBytesClientExpectsToSend = 512
+        downloadTask.countOfBytesClientExpectsToReceive = 100 * 1024 * 10 // 10MB
+        downloadTask.resume()
+        
+    }
+}
+
+extension NetworkManager: URLSessionDelegate {
+    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
+        DispatchQueue.main.async {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let completionHandler = appDelegate.backgroundSessionCompletionHandler else { return }
+            appDelegate.backgroundSessionCompletionHandler = nil
+            completionHandler()
         }
+    }
+}
+
+extension NetworkManager: URLSessionDownloadDelegate {
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+            self.fileLocation?(location)
+    }
+    
     
 }
