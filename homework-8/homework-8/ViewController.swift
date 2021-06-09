@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  homework-8
 //
-//  Created by user188734 on 6/9/21.
+//  Created by Vlad on 09.06.2021.
 //
 
 import UIKit
