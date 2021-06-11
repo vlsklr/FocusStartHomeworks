@@ -1,0 +1,52 @@
+//
+//  CoreDataManager.swift
+//  homework-8
+//
+//  Created by user188734 on 6/11/21.
+//
+
+import CoreData
+import UIKit
+
+class CoreDataManager: ICoreDataManager {
+    
+    private var companies = [Company]()
+    
+    func saveTask(companyName: String) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Company", in: context)
+        
+        let companyObject = NSManagedObject(entity: entity!, insertInto: context) as! Company
+        companyObject.companyName = companyName
+        
+        do {
+            try context.save()
+            print("Saved!")
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    private func fetchCompanies() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Company> = Company.fetchRequest()
+        do {
+            companies = try context.fetch(fetchRequest)
+            print(companies.count)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func addData(company: String) {
+        saveTask(companyName: company)
+    }
+    
+    func fetchData() -> [Company] {
+        fetchCompanies()
+        return companies
+    }
+    
+}
