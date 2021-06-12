@@ -19,6 +19,25 @@ class CoreDataManager: ICoreDataManager {
         
         let companyObject = NSManagedObject(entity: entity!, insertInto: context) as! Company
         companyObject.companyName = companyName
+//        let tempEmpl = Employee()
+//        tempEmpl.name = "Petya"
+//        companyObject.addToEmployee(tempEmpl)
+        
+        let set = NSMutableSet();
+                
+        if let employee1 = NSEntityDescription.insertNewObject(forEntityName: "Employee",                                                                 into: context) as? Employee {
+            employee1.name = "Дима"
+             set.add(employee1)
+        }
+                
+         if let emploee2 = NSEntityDescription.insertNewObject(forEntityName: "Employee",                                                                into: context) as? Employee {
+            emploee2.name = "Наташа"
+               set.add(emploee2)
+         }
+                
+        companyObject.employee = set
+
+        
         
         do {
             try context.save()

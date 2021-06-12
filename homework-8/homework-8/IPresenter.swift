@@ -8,7 +8,7 @@
 import Foundation
 
 protocol IPresenter {
-    func addEntry()
-    func getEntry()
+    func addEntry(companyName: String)
+    func getEntry(indexPath: IndexPath) -> String
     func getCountOfEntries() -> Int
 }

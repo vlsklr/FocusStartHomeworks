@@ -19,14 +19,16 @@ class Presenter: IPresenter {
         return companies.count
     }
     
-    func addEntry() {
-        let comp = Company()
-        comp.companyName = "123"
+    func addEntry(companyName: String) {
+        //let comp = Company()
+        //comp.companyName = companyName
+        storageManager.addData(company: companyName)
+        companies = storageManager.fetchData()
         
     }
     
-    func getEntry() {
-        
+    func getEntry(indexPath: IndexPath) -> String {
+        return companies[indexPath.row].companyName ?? ""
     }
     
     
