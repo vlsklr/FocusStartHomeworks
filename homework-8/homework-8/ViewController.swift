@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var tableView : UITableView?
     var navigationBar: UINavigationBar?
     var presenter: IPresenter = Presenter()
+//    let navController = UINavigationController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +79,14 @@ extension ViewController: UITableViewDataSource {
         let cell = UITableViewCell()
         cell.textLabel?.text = presenter.getEntry(indexPath: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        let emplyeeList = EmployeListViewController()
+//        let navigationController1 = UINavigationController(rootViewController: self)
+//        navigationController?.pushViewController(emplyeeList, animated: true)
+//        //self.present(emplyeeList, animated: true, completion: nil)
     }
 }
 
