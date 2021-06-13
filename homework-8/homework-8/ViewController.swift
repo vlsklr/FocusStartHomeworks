@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     var tableView : UITableView?
     var navigationBar: UINavigationBar?
     var presenter: IPresenter = Presenter()
-//    let navController = UINavigationController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .white
         tableView = UITableView()
         initTableView()
         initNavigationBar()
@@ -85,7 +85,7 @@ extension ViewController: UITableViewDataSource {
         print(indexPath.row)
         let emplyeeList = EmployeListViewController()
 //        let navigationController1 = UINavigationController(rootViewController: self)
-//        navigationController?.pushViewController(emplyeeList, animated: true)
+        self.navigationController?.pushViewController(emplyeeList, animated: true)
 //        //self.present(emplyeeList, animated: true, completion: nil)
     }
 }
