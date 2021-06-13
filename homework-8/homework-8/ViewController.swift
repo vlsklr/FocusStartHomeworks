@@ -8,8 +8,13 @@
 import UIKit
 import SnapKit
 
+protocol IEmployeListDelegate {
+    func passPresenter(presenter: IPresenter, selectedIndex: IndexPath, companyName: String)
+}
+
 class ViewController: UIViewController {
     
+    var employesSreenDelegate: IEmployeListDelegate?
     var tableView : UITableView?
     var navigationBar: UINavigationBar?
     var presenter: IPresenter = Presenter()
@@ -20,21 +25,12 @@ class ViewController: UIViewController {
         tableView = UITableView()
         initTableView()
         initNavigationBar()
-        
     }
     
     func initNavigationBar() {
-        navigationBar = UINavigationBar()
-        self.view.addSubview(navigationBar!);
-        navigationBar?.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(50)
-            make.width.equalToSuperview()
-            make.height.equalTo(44)
-        }
-        let navItem = UINavigationItem(title: "Компании")
-        let addItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: nil, action: #selector(addCompany));
-        navItem.rightBarButtonItem = addItem;
-        navigationBar?.setItems([navItem], animated: false);
+        let addItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addCompany))
+        navigationItem.rightBarButtonItem = addItem
+        navigationItem.title = "Компании"
     }
     
     func initTableView() {
@@ -53,7 +49,7 @@ class ViewController: UIViewController {
         let alertController = UIAlertController(title: "Добавить компанию", message: "Добавь новую компанию", preferredStyle: .alert)
         let addAction = UIAlertAction(title: "Добавить", style: .default) { action in
             let textField = alertController.textFields?[0]
-            self.presenter.addEntry(companyName: textField?.text ?? "")
+            self.presenter.addCompany(companyName: textField?.text ?? "")
             self.tableView?.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Отменить", style: .default, handler: nil)
@@ -68,25 +64,37 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let emplyeeList = EmployeListViewController()
+        self.employesSreenDelegate = emplyeeList
+        let companyName = tableView.cellForRow(at: indexPath)?.textLabel?.text ?? "Рога и копыта"
+        employesSreenDelegate?.passPresenter(presenter: presenter, selectedIndex: indexPath, companyName: companyName)
+        self.navigationController?.pushViewController(emplyeeList, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, complete in
+            self.presenter.deleteCompany(companyName: (tableView.cellForRow(at: indexPath)?.textLabel?.text)!)
+            tableView.reloadData()
+            complete(true)
+        }
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        configuration.performsFirstActionWithFullSwipe = true
+        return configuration
+    }
 }
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.getCountOfEntries()
+        return presenter.getCountOfCompanies()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = presenter.getEntry(indexPath: indexPath)
+        cell.textLabel?.text = presenter.getCompany(indexPath: indexPath)
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        let emplyeeList = EmployeListViewController()
-//        let navigationController1 = UINavigationController(rootViewController: self)
-        self.navigationController?.pushViewController(emplyeeList, animated: true)
-//        //self.present(emplyeeList, animated: true, completion: nil)
-    }
+    
 }
 

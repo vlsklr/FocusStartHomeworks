@@ -10,4 +10,10 @@ import Foundation
 protocol ICoreDataManager {
     func addData(company: String)
     func fetchData() -> [Company]
+    func loadEmployees(indexPath: IndexPath) -> NSSet
+    func addEmployee(employee: EmployeeModel, companyName: String)
+    func updateEmployeeInfo(employeeModel: EmployeeModel, oldName: String)
+    func deleteCompany(companyName: String)
+    func deleteEmployee(employeeName: String)
+
 }

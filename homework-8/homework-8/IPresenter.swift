@@ -8,7 +8,13 @@
 import Foundation
 
 protocol IPresenter {
-    func addEntry(companyName: String)
-    func getEntry(indexPath: IndexPath) -> String
-    func getCountOfEntries() -> Int
+    func addCompany(companyName: String)
+    func getCompany(indexPath: IndexPath) -> String
+    func getCountOfCompanies() -> Int
+    func getCountOfEmplyees(indexPath: IndexPath) -> Int
+    func getEmployee(indexCompany: IndexPath, indexPath: IndexPath) -> Employee
+    func addEmployee(employee: EmployeeModel, companyName: String)
+    func updateEmployee(employee: EmployeeModel, oldName: String)
+    func deleteCompany(companyName: String)
+    func deleteEmployee(employeeName: String)
 }

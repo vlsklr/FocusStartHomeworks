@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3C022A9F2673473D00B129B0 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C022A9E2673473D00B129B0 /* Presenter.swift */; };
 		3C022AA22673474D00B129B0 /* IPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C022AA12673474D00B129B0 /* IPresenter.swift */; };
-		3C022AA52673475700B129B0 /* IView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C022AA42673475700B129B0 /* IView.swift */; };
 		3C022AA8267362E900B129B0 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C022AA7267362E900B129B0 /* CoreDataManager.swift */; };
 		3C022AAB2673675C00B129B0 /* ICoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C022AAA2673675C00B129B0 /* ICoreDataManager.swift */; };
 		92AB69E11A19809674190FAE /* Pods_homework_8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB1A17A3CAEC176BA74EC79 /* Pods_homework_8.framework */; };
@@ -20,13 +19,14 @@
 		F5387C6F26710B6E00EBE93E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5387C6E26710B6E00EBE93E /* Assets.xcassets */; };
 		F5387C7226710B6E00EBE93E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5387C7026710B6E00EBE93E /* LaunchScreen.storyboard */; };
 		F53963E32675DF5D009A9F88 /* EmployeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53963E22675DF5D009A9F88 /* EmployeListViewController.swift */; };
+		F54459FF26766973005A8D8F /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54459FE26766973005A8D8F /* EmployeeModel.swift */; };
+		F549A5582676444F0019A845 /* EmployeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F549A5572676444F0019A845 /* EmployeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1194AEB0EFE4A122D3EED84F /* Pods-homework-8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homework-8.debug.xcconfig"; path = "Target Support Files/Pods-homework-8/Pods-homework-8.debug.xcconfig"; sourceTree = "<group>"; };
 		3C022A9E2673473D00B129B0 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		3C022AA12673474D00B129B0 /* IPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPresenter.swift; sourceTree = "<group>"; };
-		3C022AA42673475700B129B0 /* IView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IView.swift; sourceTree = "<group>"; };
 		3C022AA7267362E900B129B0 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		3C022AAA2673675C00B129B0 /* ICoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICoreDataManager.swift; sourceTree = "<group>"; };
 		98F779CDD0911596240D65AE /* Pods-homework-8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homework-8.release.xcconfig"; path = "Target Support Files/Pods-homework-8/Pods-homework-8.release.xcconfig"; sourceTree = "<group>"; };
@@ -40,6 +40,8 @@
 		F5387C7126710B6E00EBE93E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5387C7326710B6E00EBE93E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F53963E22675DF5D009A9F88 /* EmployeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeListViewController.swift; sourceTree = "<group>"; };
+		F54459FE26766973005A8D8F /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
+		F549A5572676444F0019A845 /* EmployeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				F5387C6226710B6B00EBE93E /* AppDelegate.swift */,
+				F54459FE26766973005A8D8F /* EmployeeModel.swift */,
 				F5387C6426710B6B00EBE93E /* SceneDelegate.swift */,
 				F5387C6626710B6B00EBE93E /* ViewController.swift */,
 				F53963E22675DF5D009A9F88 /* EmployeListViewController.swift */,
@@ -100,11 +103,11 @@
 				3C022AA12673474D00B129B0 /* IPresenter.swift */,
 				3C022AA7267362E900B129B0 /* CoreDataManager.swift */,
 				3C022AAA2673675C00B129B0 /* ICoreDataManager.swift */,
-				3C022AA42673475700B129B0 /* IView.swift */,
 				F5387C6E26710B6E00EBE93E /* Assets.xcassets */,
 				F5387C7026710B6E00EBE93E /* LaunchScreen.storyboard */,
 				F5387C7326710B6E00EBE93E /* Info.plist */,
 				F5387C6B26710B6B00EBE93E /* homework_8.xcdatamodeld */,
+				F549A5572676444F0019A845 /* EmployeViewController.swift */,
 			);
 			path = "homework-8";
 			sourceTree = "<group>";
@@ -225,8 +228,9 @@
 				F53963E32675DF5D009A9F88 /* EmployeListViewController.swift in Sources */,
 				3C022AAB2673675C00B129B0 /* ICoreDataManager.swift in Sources */,
 				F5387C6726710B6B00EBE93E /* ViewController.swift in Sources */,
-				3C022AA52673475700B129B0 /* IView.swift in Sources */,
+				F54459FF26766973005A8D8F /* EmployeeModel.swift in Sources */,
 				F5387C6326710B6B00EBE93E /* AppDelegate.swift in Sources */,
+				F549A5582676444F0019A845 /* EmployeViewController.swift in Sources */,
 				F5387C6D26710B6B00EBE93E /* homework_8.xcdatamodeld in Sources */,
 				F5387C6526710B6B00EBE93E /* SceneDelegate.swift in Sources */,
 				3C022AA22673474D00B129B0 /* IPresenter.swift in Sources */,
