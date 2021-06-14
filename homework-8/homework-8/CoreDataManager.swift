@@ -11,10 +11,11 @@ import UIKit
 
 
 class CoreDataManager: ICoreDataManager {
+
     
     private var companies = [Company]()
     
-    func saveTask(companyName: String) {
+    func addCompany(companyName: String) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Company", in: context)
@@ -30,7 +31,7 @@ class CoreDataManager: ICoreDataManager {
         }
     }
     
-    private func fetchCompanies() {
+    func fetchCompanies() -> [Company] {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<Company> = Company.fetchRequest()
@@ -39,6 +40,8 @@ class CoreDataManager: ICoreDataManager {
         } catch {
             print(error.localizedDescription)
         }
+        
+        return companies
     }
     
     func addEmployee(employee: EmployeeModel, companyName: String) {
@@ -93,15 +96,6 @@ class CoreDataManager: ICoreDataManager {
         } catch {
             print(error.localizedDescription)
         }
-    }
-    
-    func addData(company: String) {
-        saveTask(companyName: company)
-    }
-    
-    func fetchData() -> [Company] {
-        fetchCompanies()
-        return companies
     }
     
     func deleteCompany(companyName: String) {

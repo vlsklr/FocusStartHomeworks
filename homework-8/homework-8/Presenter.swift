@@ -12,7 +12,7 @@ class Presenter: IPresenter {
     private var companies = [Company]()
     private var storageManager:ICoreDataManager = CoreDataManager()
     init() {
-        companies = storageManager.fetchData()
+        companies = storageManager.fetchCompanies()
     }
     
     func getCountOfCompanies() -> Int {
@@ -20,9 +20,8 @@ class Presenter: IPresenter {
     }
     
     func addCompany(companyName: String) {
-        storageManager.addData(company: companyName)
-        companies = storageManager.fetchData()
-        
+        storageManager.addCompany(companyName: companyName)
+        companies = storageManager.fetchCompanies()
     }
     
     func getCompany(indexPath: IndexPath) -> String {
@@ -49,7 +48,7 @@ class Presenter: IPresenter {
     }
     func deleteCompany(companyName: String) {
         storageManager.deleteCompany(companyName: companyName)
-        companies = storageManager.fetchData()
+        companies = storageManager.fetchCompanies()
     }
     func deleteEmployee(employeeName: String) {
         storageManager.deleteEmployee(employeeName: employeeName)        

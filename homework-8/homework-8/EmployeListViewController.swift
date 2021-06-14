@@ -76,7 +76,7 @@ extension EmployeListViewController: UITableViewDelegate {
         let employeInfo = EmployeViewController()
         self.delegate = employeInfo
         let employee = presenter?.getEmployee(indexCompany: indexOfCompany!, indexPath: indexPath)
-        let employeeModel = EmployeeModel(name: employee?.name ?? "", age: employee?.age ?? "", education: employee?.education ?? "", experince: employee?.experience ?? "", position: employee?.position ?? "")
+        let employeeModel = EmployeeModel(name: employee?.name ?? "", age: employee?.age, education: employee?.education, experince: employee?.experience, position: employee?.position)
         delegate?.passPresenter(presenter: self.presenter!, employee: employeeModel, companyName: companyName ?? "Рога и копыта")
         self.navigationController?.pushViewController(employeInfo, animated: true)
     }
@@ -91,7 +91,6 @@ extension EmployeListViewController: UITableViewDelegate {
         configuration.performsFirstActionWithFullSwipe = true
         return configuration
     }
-    
 }
 
 extension EmployeListViewController: UITableViewDataSource {
