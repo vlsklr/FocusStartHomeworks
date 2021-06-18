@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FirstVC: UIViewController {
+class FirstVC: UIViewController, ILoggerProtocol {
     
     @IBOutlet weak var ageTextField: UITextField!
     
@@ -27,6 +27,18 @@ class FirstVC: UIViewController {
         let ageAlert = UIAlertController(title: "Мой возраст 27", message: ageResponse, preferredStyle: .alert)
         ageAlert.addAction(UIAlertAction(title: "Понятно", style: .default))
         self.present(ageAlert, animated: true)
+    }
+    
+    func printState(state: String) {
+        print("FirstVC has \(state)")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        printState(state: "appeared")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        printState(state: "disappeared")
     }
 }
 extension FirstVC: UITextFieldDelegate {
